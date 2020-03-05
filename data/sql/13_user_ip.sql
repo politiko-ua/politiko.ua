@@ -1,0 +1,1 @@
+ALTER TABLE public.user_auth ADD COLUMN ip character varying(24);

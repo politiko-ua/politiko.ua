@@ -1,0 +1,1 @@
+ALTER TABLE public.blogs_posts ADD COLUMN "type" smallint NOT NULL DEFAULT 1;

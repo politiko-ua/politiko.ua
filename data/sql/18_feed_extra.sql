@@ -1,0 +1,1 @@
+ALTER TABLE public.feed ADD COLUMN extra text;

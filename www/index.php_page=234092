@@ -1,0 +1,1100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+	<title>Софт</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta name="description" content="Информационный портал по безопасности SecurityLab.ru" />
+<link href="/bitrix/js/main/core/css/core.css?1331084773" type="text/css" rel="stylesheet" />
+<link href="/bitrix/js/socialservices/css/ss.css?1327998306" type="text/css" rel="stylesheet" />
+<link href="/bitrix/js/main/core/css/core_window.css?1336085458" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/.default/components/bitrix/catalog.section.list/tree/style.css?1327998571" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/.default/components/seclab/news.list/soft_left/style.css?1327998578" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/.default/components/seclab/news.list/soft_right/style.css?1327998578" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/.default/components/seclab/news.line/news2/style.css?1327998577" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/.default/components/seclab/news.line/vulnerability/style.css?1327998578" type="text/css" rel="stylesheet" />
+<link href="/bitrix/templates/securitylab.column.blue/styles.css?1340642950" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/bitrix/js/main/core/core.js?1336085464"></script>
+<script type="text/javascript">BX.message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'SL','USER_ID':'','bitrix_sessid':'32b8f0f37413c141991d145ee60095bd','SITE_ID':'ru','JS_CORE_LOADING':'Загрузка...','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с'})</script>
+<script type="text/javascript" src="/bitrix/js/main/core/core_ajax.js?1336085458"></script>
+<script type="text/javascript" src="/bitrix/js/main/session.js?1327998306"></script>
+<script type="text/javascript">
+bxSession.Expand(1440, '32b8f0f37413c141991d145ee60095bd', false, '01bfd8c2dde7eb854722730db2c01224');
+</script>
+
+<script type="text/javascript" src="http://vkontakte.ru/js/api/openapi.js"></script>
+<script type="text/javascript">
+BX.ready(function(){VK.init({apiId: '2283932'});});
+
+function BxVKAuthInfo(response) 
+{
+	var url_err = '/software/index.php?auth_service_id=VKontakte&auth_service_error=1';
+	if(response.session) 
+	{
+		var url_post = '/software/index.php?login=yes';
+		var url_ok = '/software/index.php';
+		var data = {
+			"auth_service_id": "VKontakte",
+			"vk_session": response.session
+		};
+		BX.ajax.post(url_post, data, function(res){window.location = (res == "OK"? url_ok : url_err);});
+	} 
+	else 
+	{
+		window.location = url_err;
+	}
+}
+</script>
+
+<script type="text/javascript" src="/bitrix/js/main/core/core_window.js?1330819868"></script>
+<script type="text/javascript" src="/bitrix/js/socialservices/ss.js?1327998306"></script>
+	<!--[if IE 7]>
+		<style type="text/css"> 
+			#content #right {
+				margin-left:-280px;
+
+			}
+		</style>
+	<![endif]-->
+<script type="text/javascript" src="/js/top_menu.js"></script>
+<script type="text/javascript" src="/js/toggle.js"></script>
+<script type="text/javascript" src="/js/switch.js"></script>
+<script type="text/javascript" src="/js/clear_fields.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="website">
+<div id="header">
+	<div class="logo">
+		<a href="/"><img height="92" border="0" width="258" src="http://www.securitylab.ru/img2/logo-blue.jpg" alt="" class="logo" /></a>	
+	</div>	
+	<div class="adv">
+			</div>
+
+<script src="/js/jquery-latest.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){              // по окончанию загрузки страницы
+//			$(".activ_item").show();
+		$("#MAIN_MENU ul li").mouseover(function() {
+			$("li.select").removeClass("active");
+			$(".SUB_MENU").hide();
+			$(this).addClass("active");
+			$(this).find(".SUB_MENU").show();
+		}).mouseout(function(){
+			$(this).removeClass("active").find(".SUB_MENU").hide();
+			$("li.select").addClass("active");
+			$("li.select.SUB_MENU").show();
+		});
+	});
+</script>
+<div id="MAIN_MENU" style="">
+	<ul>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="parent" id="parent_0">
+			<a id="menu-item-a_0" href="/blog/">Блоги</a>
+		</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="separator">|</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="parent" id="parent_1">
+			<a id="menu-item-a_1" href="/vulnerability/">Уязвимости</a>
+			<div style="display: none;" class="SUB_MENU" id="child_1">
+				<ul>
+					<li><a id="menu-item-a_2" href="/vulnerability/page1_1.php">Уязвимости</a></li>
+					<li><a id="menu-item-a_2" href="/poc/">PoC</a></li>
+					<li><a id="menu-item-a_2" href="/lab/">PT Research Lab</a></li>
+					<li><a id="menu-item-a_2" href="/nvd/">База уязвимостей CVE</a></li>
+					<li><a id="menu-item-a_2" href="/virus/">Энциклопедия вирусов</a></li>
+				</ul>
+			</div>
+		</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="separator">|</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="parent" id="parent_2">
+			<a id="menu-item-a_2" href="/news/">Новости</a>
+		</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="separator">|</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="parent" id="parent_3">
+			<a id="menu-item-a_3" href="/analytics/">Статьи</a>
+			<div style="display: none;" class="SUB_MENU" id="child_3">
+				<ul>
+					<li><a id="menu-item-a_4" href="/analytics/">Аналитика</a></li>
+					<li><a id="menu-item-a_4" href="/contest/">Конкурсы</a></li>
+					<li><a id="menu-item-a_4" href="/opinion/">Мнения</a></li>
+				</ul>
+			</div>
+		</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="separator">|</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="parent" id="parent_4">
+			<a id="menu-item-a_4" href="/software/">Софт</a>
+		</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="separator">|</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="parent" id="parent_5">
+			<a id="menu-item-a_5" href="#">Проекты партнеров</a>
+			<div style="display: none;" class="SUB_MENU" id="child_5">
+				<ul>
+					<li><a id="menu-item-a_6" href="/infosecurity/">InfoBez Expo</a></li>
+					<li><a id="menu-item-a_6" href="/devcon/">DevCon`11</a></li>
+					<li><a id="menu-item-a_6" href="/cee-secr/">CEE-SECR 2012</a></li>
+					<li><a id="menu-item-a_6" href="/luxofttraining/">Luxoft Training</a></li>
+					<li><a id="menu-item-a_6" href="/msteched/">MS Tech-Ed</a></li>
+					<li><a id="menu-item-a_6" href="/pnpsummit/">P&P Summit</a></li>
+					<li><a id="menu-item-a_6" href="/cisco-expo/">Cisco Expo 2011</a></li>
+				</ul>
+			</div>
+		</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="separator">|</li>
+		<li style="background: none repeat scroll 0pt 0pt rgb(160, 189, 219);" class="parent" id="parent_6">
+			<a id="menu-item-a_6" href="/forum/">Форум</a>
+		</li>
+	</ul>		
+	<div class="links">
+		<a href="/rss.php">RSS</a> • 
+				<a href="#" onclick="return authFormWindow.ShowLoginForm();">Вход</a> 
+		<div id="login-form-window">
+	<div id="login-form-window-internal">
+	<div onclick="return authFormWindow.CloseLoginForm()" title="Закрыть окно" id="close-form-window">Закрыть</div>
+	<form method="post" target="_top" action="/software/index.php?login=yes">
+		<input type="hidden" name="backurl" value="/software/index.php" />
+	<input type="hidden" name="fff" value="fff" />
+		<input type="hidden" name="AUTH_FORM" value="Y" />
+		<input type="hidden" name="TYPE" value="AUTH" />
+
+		Логин:<br />
+		<input type="text" size="17" maxlength="50" name="USER_LOGIN" tabindex="10" id="auth-user-login" /><br />
+		Пароль:<br />
+		<input type="password" size="17" maxlength="50" name="USER_PASSWORD" tabindex="20" /><br />
+		<input type="checkbox" checked="checked" value="Y" name="USER_REMEMBER" tabindex="30" id="USER_REMEMBER"><label for="USER_REMEMBER">Запомнить меня на этом компьютере</label>
+		<br />
+		<input type="submit" value="Войти" name="Login" tabindex="40" /><br />
+		<a href="/user.php?register=yes&amp;backurl=%2Fsoftware%2Findex.php" rel="nofollow">Регистрация</a><br />
+		<a href="/user.php?forgot_password=yes&amp;backurl=%2Fsoftware%2Findex.php" rel="nofollow">Забыли свой пароль?</a><br />
+		<div class="bx-auth-lbl"></div>
+<div class="bx-auth-serv-icons">
+	<a title="ВКонтакте" href="javascript:void(0)" onclick="BxShowAuthFloat('VKontakte', 'form')"><i class="bx-ss-icon vkontakte"></i></a>
+	<a title="Google" href="javascript:void(0)" onclick="BxShowAuthFloat('GoogleOAuth', 'form')"><i class="bx-ss-icon google"></i></a>
+	<a title="Twitter" href="javascript:void(0)" onclick="BxShowAuthFloat('Twitter', 'form')"><i class="bx-ss-icon twitter"></i></a>
+	<a title="Facebook" href="javascript:void(0)" onclick="BxShowAuthFloat('Facebook', 'form')"><i class="bx-ss-icon facebook"></i></a>
+	<a title="Livejournal" href="javascript:void(0)" onclick="BxShowAuthFloat('Livejournal', 'form')"><i class="bx-ss-icon livejournal"></i></a>
+	<a title="OpenID" href="javascript:void(0)" onclick="BxShowAuthFloat('OpenID', 'form')"><i class="bx-ss-icon openid"></i></a>
+</div>
+	</form>
+	</div>
+</div>
+<div style="display:none">
+<div id="bx_auth_float" class="bx-auth-float">
+
+
+<div class="bx-auth">
+	<form method="post" name="bx_auth_servicesform" target="_top" action="/software/index.php?login=yes">
+		<div class="bx-auth-title">Войти как пользователь</div>
+		<div class="bx-auth-note">Вы можете войти на сайт, если вы зарегистрированы на одном из этих сервисов:</div>
+		<div class="bx-auth-services">
+			<div><a href="javascript:void(0)" onclick="BxShowAuthService('VKontakte', 'form')" id="bx_auth_href_formVKontakte"><i class="bx-ss-icon vkontakte"></i><b>ВКонтакте</b></a></div>
+			<div><a href="javascript:void(0)" onclick="BxShowAuthService('GoogleOAuth', 'form')" id="bx_auth_href_formGoogleOAuth"><i class="bx-ss-icon google"></i><b>Google</b></a></div>
+			<div><a href="javascript:void(0)" onclick="BxShowAuthService('Twitter', 'form')" id="bx_auth_href_formTwitter"><i class="bx-ss-icon twitter"></i><b>Twitter</b></a></div>
+			<div><a href="javascript:void(0)" onclick="BxShowAuthService('Facebook', 'form')" id="bx_auth_href_formFacebook"><i class="bx-ss-icon facebook"></i><b>Facebook</b></a></div>
+			<div><a href="javascript:void(0)" onclick="BxShowAuthService('Livejournal', 'form')" id="bx_auth_href_formLivejournal"><i class="bx-ss-icon livejournal"></i><b>Livejournal</b></a></div>
+			<div><a href="javascript:void(0)" onclick="BxShowAuthService('OpenID', 'form')" id="bx_auth_href_formOpenID"><i class="bx-ss-icon openid"></i><b>OpenID</b></a></div>
+		</div>
+		<div class="bx-auth-line"></div>
+		<div class="bx-auth-service-form" id="bx_auth_servform" style="display:none">
+			<div id="bx_auth_serv_formVKontakte" style="display:none">
+<a href="javascript:void(0)" onclick="VK.Auth.login(BxVKAuthInfo);" class="bx-ss-button vkontakte-button"></a><span class="bx-spacer"></span><span>Используйте вашу учетную запись VKontakte.ru для входа на сайт.</span></div>
+			<div id="bx_auth_serv_formGoogleOAuth" style="display:none"><a href="javascript:void(0)" onclick="BX.util.popup('https://accounts.google.com/o/oauth2/auth?client_id=768345464118.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2Fwww.securitylab.ru%2Fbitrix%2Ftools%2Foauth%2Fgoogle.php&amp;scope=https%3A%2F%2Fwww.google.com%2Fm8%2Ffeeds%2F&amp;response_type=code&amp;state=site_id%3Dru%26backurl%3D%252Fsoftware%252Findex.php', 580, 400)" class="bx-ss-button google-button"></a><span class="bx-spacer"></span><span>Используйте вашу учетную запись Google для входа на сайт.</span></div>
+			<div id="bx_auth_serv_formTwitter" style="display:none"><a href="javascript:void(0)" onclick="BX.util.popup('/software/index.php?auth_service_id=Twitter', 800, 450)" class="bx-ss-button twitter-button"></a><span class="bx-spacer"></span><span>Используйте вашу учетную запись на Twitter.com для входа на сайт.</span></div>
+			<div id="bx_auth_serv_formFacebook" style="display:none"><a href="javascript:void(0)" onclick="BX.util.popup('https://www.facebook.com/dialog/oauth?client_id=252315198150947&amp;redirect_uri=http%3A%2F%2Fwww.securitylab.ru%2Fsoftware%2Findex.php%3Fauth_service_id%3DFacebook&amp;scope=email&amp;display=popup', 580, 400)" class="bx-ss-button facebook-button"></a><span class="bx-spacer"></span><span>Используйте вашу учетную запись на Facebook.com для входа на сайт.</span></div>
+			<div id="bx_auth_serv_formLivejournal" style="display:none">
+<span class="bx-ss-icon openid"></span>
+<input type="text" name="OPENID_IDENTITY_LIVEJOURNAL" value="" size="20" />
+<span>.livejournal.com</span>
+<input type="submit" class="button" name="" value="Войти" />
+</div>
+			<div id="bx_auth_serv_formOpenID" style="display:none">
+<span class="bx-ss-icon openid"></span>
+<span>OpenID:</span>
+<input type="text" name="OPENID_IDENTITY_OPENID" value="" size="40" />
+<input type="submit" class="button" name="" value="Войти" />
+</div>
+		</div>
+		<input type="hidden" name="auth_service_id" value="" />
+	</form>
+</div>
+
+</div>
+</div>
+				• <a href="/search/">Поиск</a>
+	</div>
+</div></div>
+<br />
+
+<div id="content">
+		<div id="left">
+		<div id="center">
+			<div class="main_content">
+				<div class="header">
+					<img border="0" alt="" align="left" src="/img2/news-left.png" width="24" height="24" />Софт				</div>
+
+<div class="block_round_corner">
+	<div class="cont soft_menu" style="text-align:center;">
+		<div class="lt"></div>
+		<div class="rt"></div>
+		<div style="clear:both; height:1px; width:1px;"></div>
+		<div class="main_box" style="">
+					<div class="column left">
+				<ul class="parent">
+					<li class="parent">
+							<a onclick="toggle_soft('1','1')" id="soft_child_a1" href="#"><img alt="" src="/upload/iblock/08c/08c57e7e6eae8e55a1b9aeb7caff3cf0.png" border="0" style="padding-right:5px;" />Системные утилиты</a>
+						<ul class="child" style="display: none;" id="soft_child1">
+
+										<li>- <a href="/software/1541/">Антивирусы для сотовых телефонов</a></li>
+										<li>- <a href="/software/1534/">Архиваторы</a></li>
+										<li>- <a href="/software/1502/">Дефрагментация</a></li>
+										<li>- <a href="/software/1531/">Комплексная защита компьютера </a></li>
+										<li>- <a href="/software/1533/">Эмуляторы</a></li>
+										<li>- <a href="/software/1250/">Антивирусы</a></li>
+										<li>- <a href="/software/1252/">DVD</a></li>
+										<li>- <a href="/software/1253/">Восстановление данных</a></li>
+										<li>- <a href="/software/1254/">Контроль и мониторинг</a></li>
+										<li>- <a href="/software/1255/">Реестр</a></li>
+										<li>- <a href="/software/1291/">Файловая система</a></li>
+										<li>- <a href="/software/1292/">Виртуальные машины</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('2','2')" id="soft_child_a2" href="#"><img alt="" src="/upload/iblock/1f6/1f6da4ad08c4d0770dc1e62431905775.png" border="0" style="padding-right:5px;" />Сетевые утилиты</a>
+						<ul class="child" style="display: none;" id="soft_child2">
+
+										<li>- <a href="/software/1478/">SSH клиенты</a></li>
+										<li>- <a href="/software/1530/">Инвентаризация сети</a></li>
+										<li>- <a href="/software/1243/">Программы для поиска и проверки прокси серверов</a></li>
+										<li>- <a href="/software/1249/">Подсчет трафика</a></li>
+										<li>- <a href="/software/1251/">FTP клиенты</a></li>
+										<li>- <a href="/software/1273/">Domain Lookup</a></li>
+										<li>- <a href="/software/1274/">Traceroute tools</a></li>
+										<li>- <a href="/software/1279/">Удаленное управление</a></li>
+										<li>- <a href="/software/1304/">Сканеры портов</a></li>
+										<li>- <a href="/software/1308/">Мониторинг сети</a></li>
+										<li>- <a href="/software/1309/">Прокси серверы</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('3','3')" id="soft_child_a3" href="#"><img alt="" src="/upload/iblock/139/139b627e10f71ca374b0b4bb4ec426a4.png" border="0" style="padding-right:5px;" />Беспроводные сети</a>
+						<ul class="child" style="display: none;" id="soft_child3">
+
+										<li>- <a href="/software/1536/">VoIP инструменты</a></li>
+										<li>- <a href="/software/1461/">Взлом беспроводного шифрования</a></li>
+										<li>- <a href="/software/1460/">Контроль силы сигнала сети</a></li>
+										<li>- <a href="/software/1426/">Обнаружение и анализ Wi-Fi сетей</a></li>
+										<li>- <a href="/software/1462/">Создание произвольных фреймов</a></li>
+										<li>- <a href="/software/1463/">Утилиты для пен теста беспроводных сетей</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('4','4')" id="soft_child_a4" href="#"><img alt="" src="/upload/iblock/935/935317a59da5a02d88a07d0cb86bb942.png" border="0" style="padding-right:5px;" />Конкурентная разведка</a>
+						<ul class="child" style="display: none;" id="soft_child4">
+
+										<li>- <a href="/software/1511/">Анализ информации</a></li>
+										<li>- <a href="/software/1500/">Мониторинг изменения информации</a></li>
+										<li>- <a href="/software/1510/">Сбор информации</a></li>
+										<li>- <a href="/software/1501/">Системы поиска информации</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('5','5')" id="soft_child_a5" href="#"><img alt="" src="/upload/iblock/044/0441c1eacb640a4a31f01669cf81aba8.png" border="0" style="padding-right:5px;" />Программы для Web мастеров</a>
+						<ul class="child" style="display: none;" id="soft_child5">
+
+										<li>- <a href="/software/1232/">Защита кода</a></li>
+										<li>- <a href="/software/1519/">Анализ безопасности</a></li>
+										<li>- <a href="/software/1521/">Анализ лог файлов</a></li>
+										<li>- <a href="/software/1517/">Защита Web приложений</a></li>
+										<li>- <a href="/software/1520/">Модули к Web серверам</a></li>
+										<li>- <a href="/software/1515/">Оптимизаторы</a></li>
+										<li>- <a href="/software/1514/">Редакторы кода</a></li>
+										<li>- <a href="/software/1532/">Форумы</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('6','6')" id="soft_child_a6" href="#"><img alt="" src="/upload/iblock/066/066fe7113ea33942776e272315c8fd63.png" border="0" style="padding-right:5px;" />Разработка</a>
+						<ul class="child" style="display: none;" id="soft_child6">
+
+										<li>- <a href="/software/1526/">База данных</a></li>
+										<li>- <a href="/software/1527/">Инсталляторы</a></li>
+										<li>- <a href="/software/1528/">Средства разработки</a></li>
+	                                        	</ul>
+					</li>
+					</ul>
+			</div>
+			
+					<div class="column left">
+				<ul class="parent">
+					<li class="parent">
+							<a onclick="toggle_soft('7','7')" id="soft_child_a7" href="#"><img alt="" src="/upload/iblock/3b2/3b222b9505c22af45be240b4a991f59b.png" border="0" style="padding-right:5px;" />Резервное копирование</a>
+						<ul class="child" style="display: none;" id="soft_child7">
+
+										<li>- <a href="/software/1489/">База данных</a></li>
+										<li>- <a href="/software/1487/">Драйвера</a></li>
+										<li>- <a href="/software/1488/">Почта</a></li>
+										<li>- <a href="/software/1490/">Синхронизация данных</a></li>
+										<li>- <a href="/software/1486/">Система</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('8','8')" id="soft_child_a8" href="#"><img alt="" src="/upload/iblock/368/3681eb437c70c551e39b66ea5a1077c6.png" border="0" style="padding-right:5px;" />Серверное ПО</a>
+						<ul class="child" style="display: none;" id="soft_child8">
+
+										<li>- <a href="/software/1495/">FTP серверы</a></li>
+										<li>- <a href="/software/1496/">Web серверы</a></li>
+										<li>- <a href="/software/1504/">Аппаратные устройства</a></li>
+										<li>- <a href="/software/1498/">Базы данных</a></li>
+										<li>- <a href="/software/1512/">Межсетевые экраны</a></li>
+										<li>- <a href="/software/1497/">Операционные системы</a></li>
+										<li>- <a href="/software/1494/">Почтовые серверы</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('9','9')" id="soft_child_a9" href="#"><img alt="" src="/upload/iblock/7d6/7d63e632f8bc511a82fa9f763523c9b0.png" border="0" style="padding-right:5px;" />Снифферы</a>
+						<ul class="child" style="display: none;" id="soft_child9">
+
+										<li>- <a href="/software/1412/">HTTP снифферы</a></li>
+										<li>- <a href="/software/1237/">Антиснифферы</a></li>
+										<li>- <a href="/software/1238/">Принт снифферы</a></li>
+										<li>- <a href="/software/1239/">Анализаторы протоколов</a></li>
+										<li>- <a href="/software/1240/">Снифферы IM систем (ICQ и др).</a></li>
+										<li>- <a href="/software/1241/">Парольные снифферы</a></li>
+										<li>- <a href="/software/1242/">Снифферы беспроводных сетей</a></li>
+										<li>- <a href="/software/1272/">Пакетные снифферы</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('10','10')" id="soft_child_a10" href="#"><img alt="" src="/upload/iblock/419/4190341c4d338d105bfbbdafa3b7a7f4.png" border="0" style="padding-right:5px;" />Средства общения</a>
+						<ul class="child" style="display: none;" id="soft_child10">
+
+										<li>- <a href="/software/1523/">Instant Messaging </a></li>
+										<li>- <a href="/software/1503/">IP телефония</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('11','11')" id="soft_child_a11" href="#"><img alt="" src="/upload/iblock/040/040907e4468587840c83214722a57064.png" border="0" style="padding-right:5px;" />Защита информации</a>
+						<ul class="child" style="display: none;" id="soft_child11">
+
+										<li>- <a href="/software/1423/">Защита детей от интернет угроз</a></li>
+										<li>- <a href="/software/1479/">Защита цифровых данных</a></li>
+										<li>- <a href="/software/1260/">Персональные межсетевые экраны</a></li>
+										<li>- <a href="/software/1261/">Управление доступом</a></li>
+										<li>- <a href="/software/1262/">Мониторинг активности PC</a></li>
+										<li>- <a href="/software/1275/">Спам фильтры (клиент)</a></li>
+										<li>- <a href="/software/1276/">Спам фильтры (сервер)</a></li>
+										<li>- <a href="/software/1277/">antispyware (защита от шпионских программ)</a></li>
+										<li>- <a href="/software/1278/">On-line утилиты</a></li>
+										<li>- <a href="/software/1295/">Безопасное удаление</a></li>
+										<li>- <a href="/software/1296/">Политика безопасности</a></li>
+										<li>- <a href="/software/1297/">Анализ Рисков</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('12','12')" id="soft_child_a12" href="#"><img alt="" src="/upload/iblock/05f/05f2cc360f51ad68973395c1bd2dd9db.png" border="0" style="padding-right:5px;" />Системы обнаружения вторжения</a>
+						<ul class="child" style="display: none;" id="soft_child12">
+
+										<li>- <a href="/software/1258/">Системы обнаружения вторжения</a></li>
+										<li>- <a href="/software/1259/">Honeypot</a></li>
+										<li>- <a href="/software/1263/">Защита Windows систем</a></li>
+										<li>- <a href="/software/1264/">Защита Linux систем</a></li>
+										<li>- <a href="/software/1271/">Сканеры уязвимостей</a></li>
+										<li>- <a href="/software/1282/">Анализ инцидента</a></li>
+										<li>- <a href="/software/1283/">stress тесты</a></li>
+										<li>- <a href="/software/1289/">Уклонение</a></li>
+										<li>- <a href="/software/1310/">сеть</a></li>
+	                                        	</ul>
+					</li>
+					</ul>
+			</div>
+			
+					<div class="column left">
+				<ul class="parent">
+					<li class="parent">
+							<a onclick="toggle_soft('13','13')" id="soft_child_a13" href="#"><img alt="" src="/upload/iblock/25f/25fb6a129c1649fe7b704d70e8ec7b7b.png" border="0" style="padding-right:5px;" />Подбор паролей</a>
+						<ul class="child" style="display: none;" id="soft_child13">
+
+										<li>- <a href="/software/1459/">Восстановление паролей к IM программам</a></li>
+										<li>- <a href="/software/1265/">Многофункцинальный подбор</a></li>
+										<li>- <a href="/software/1266/">Подбор ZIP/RAR/Word/XLS/Lotus паролей</a></li>
+										<li>- <a href="/software/1267/">Подбор SAM/SMB/NetBios/Кэш паролей</a></li>
+										<li>- <a href="/software/1268/">Подбор Web/mail/FTP/Sql паролей</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('14','14')" id="soft_child_a14" href="#"><img alt="" src="/upload/iblock/345/3456d978e426330409cae671c797a006.png" border="0" style="padding-right:5px;" />Активное противодействие</a>
+						<ul class="child" style="display: none;" id="soft_child14">
+
+										<li>- <a href="/software/1244/">Email</a></li>
+										<li>- <a href="/software/1269/">War Dialer</a></li>
+										<li>- <a href="/software/1286/">Инструменты</a></li>
+										<li>- <a href="/software/1303/">Сетевые средства</a></li>
+										<li>- <a href="/software/1305/">Сокрытие нападения</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('15','15')" id="soft_child_a15" href="#"><img alt="" src="/upload/iblock/869/869dbdd30663140e24a3afddd703bc96.png" border="0" style="padding-right:5px;" />Кодирование и Шифрование</a>
+						<ul class="child" style="display: none;" id="soft_child15">
+
+										<li>- <a href="/software/1300/">Случайные числа</a></li>
+										<li>- <a href="/software/1312/">Стеганография</a></li>
+										<li>- <a href="/software/1313/">Криптоанализ</a></li>
+										<li>- <a href="/software/1314/">Шифрование данных</a></li>
+										<li>- <a href="/software/1315/">Шифрование  трафика</a></li>
+										<li>- <a href="/software/1316/">Библиотеки</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('16','16')" id="soft_child_a16" href="#"><img alt="" src="/upload/iblock/c16/c165a450a37777ed3533d425ac1fe661.png" border="0" style="padding-right:5px;" />Утилиты</a>
+						<ul class="child" style="display: none;" id="soft_child16">
+
+										<li>- <a href="/software/1413/">P2P клиенты</a></li>
+										<li>- <a href="/software/1257/">База данных</a></li>
+										<li>- <a href="/software/1270/">RE</a></li>
+										<li>- <a href="/software/1281/">Пароли</a></li>
+										<li>- <a href="/software/1284/">система</a></li>
+										<li>- <a href="/software/1288/">Замена стандартных программ</a></li>
+										<li>- <a href="/software/1293/">Электронная почта</a></li>
+										<li>- <a href="/software/1294/">(Де)Компиляторы и Деббагеры</a></li>
+										<li>- <a href="/software/1302/">Сбор информации</a></li>
+										<li>- <a href="/software/1307/">Программирование</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('17','17')" id="soft_child_a17" href="#"><img alt="" src="/upload/iblock/41e/41e562e95411662c3aad21784ab449a9.png" border="0" style="padding-right:5px;" />Идентификация</a>
+						<ul class="child" style="display: none;" id="soft_child17">
+
+										<li>- <a href="/software/1285/">сеть</a></li>
+										<li>- <a href="/software/1301/">WEB</a></li>
+										<li>- <a href="/software/1317/">Менеджеры паролей</a></li>
+										<li>- <a href="/software/1318/">Сертификаты</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('18','18')" id="soft_child_a18" href="#"><img alt="" src="/upload/iblock/b8f/b8fe6ce9613612b607c2d66200a70f03.png" border="0" style="padding-right:5px;" />Осуществление Политики</a>
+						<ul class="child" style="display: none;" id="soft_child18">
+
+										<li>- <a href="/software/1280/">система</a></li>
+										<li>- <a href="/software/1298/">Web доступ</a></li>
+	                                        	</ul>
+					</li>
+					</ul>
+			</div>
+			
+					<div class="column left">
+				<ul class="parent">
+					<li class="parent">
+							<a onclick="toggle_soft('19','19')" id="soft_child_a19" href="#"><img alt="" src="/upload/iblock/2a8/2a81e41a07214d0f51714d149b6d790a.png" border="0" style="padding-right:5px;" />Управление доступом</a>
+						<ul class="child" style="display: none;" id="soft_child19">
+
+										<li>- <a href="/software/1323/">FIREWALL</a></li>
+										<li>- <a href="/software/1324/">Файловая система</a></li>
+										<li>- <a href="/software/1325/">Приложения</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('20','20')" id="soft_child_a20" href="#"><img alt="" src="/upload/iblock/075/075f3058e2f71128780b4d95fae1490b.png" border="0" style="padding-right:5px;" />Аудит</a>
+						<ul class="child" style="display: none;" id="soft_child20">
+
+										<li>- <a href="/software/1476/">Web</a></li>
+										<li>- <a href="/software/1319/">Анализ журналов регистрации</a></li>
+										<li>- <a href="/software/1320/">Система</a></li>
+										<li>- <a href="/software/1321/">Исходный код программ</a></li>
+										<li>- <a href="/software/1322/">Целостность файлов</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('21','21')" id="soft_child_a21" href="#"><img alt="" src="/upload/iblock/38f/38fb4d7d3a540239942d33b5b02d0d9a.png" border="0" style="padding-right:5px;" />Эксплоиты и шеллкоды</a>
+						<ul class="child" style="display: none;" id="soft_child21">
+
+										<li>- <a href="/software/1234/">PHP shell</a></li>
+										<li>- <a href="/software/1235/">Программы для создания эксплоитов</a></li>
+										<li>- <a href="/software/1549/">Jailbreak</a></li>
+										<li>- <a href="/software/1236/">Коллекция Shellcode</a></li>
+										<li>- <a href="/software/1287/">Разное</a></li>
+	                                        	</ul>
+					</li>
+			
+							<li>
+							<a onclick="toggle_soft('22','22')" id="soft_child_a22" href="#"><img alt="" src="/upload/iblock/309/30932e4615108249b245c5172e184200.png" border="0" style="padding-right:5px;" />Утилиты для браузеров</a>
+						<ul class="child" style="display: none;" id="soft_child22">
+
+										<li>- <a href="/software/1483/">Анализ активности</a></li>
+										<li>- <a href="/software/1482/">Безопасный просмотр</a></li>
+										<li>- <a href="/software/1491/">Браузеры</a></li>
+										<li>- <a href="/software/1492/">Разное</a></li>
+	                                        	</ul>
+					</li>
+			
+				</ul>
+			</div>
+
+		</div>		<div style="clear:both; height:1px; width:1px;"></div>
+		<div class="lb"></div>
+		<div class="rb"></div>
+		<div class="bot"></div>                        
+	</div>
+</div> 
+<div class="block_soft_left">
+<h1>Последние версии</h1>
+		<div class="preview-news">
+        	<h2><a href="/software/420984.php">Avira Antivir Rescue System 27.06.12</a>
+        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1253/"></a></div>
+	        <div class="news-preview">Утилита для создания загрузочного диска в случае заражения системы. <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/267148.php">PRTG - Free Network Monitor 12.2.2.2156</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1249/"></a></div>
+	        <div class="news-preview">Пакет PRTG Traffic Grapher представляет собой удобное в использовании Windows-приложение для мониторинга пропускной способности сети. <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/267647.php">Maxthon 3.4.1.1000</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1491/"></a></div>
+	        <div class="news-preview">Maxthon - мощный веб-браузер с удобным настраиваем пользовательским интерфейсом.  <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/233576.php">WinHex  16.5 SR-8</a>
+        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1284/"></a></div>
+	        <div class="news-preview">Универсальный hex-редактор для файлов, дисков и RAM. <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/234088.php">TweakNow RegCleaner  7.2.0</a>
+        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1255/"></a></div>
+	        <div class="news-preview">Программа TweakNow RegCleaner помогает очистить реестр от ненужных записей. <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/270275.php">Hamachi 2.1.0.210 </a>
+        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1315/"></a></div>
+	        <div class="news-preview">небольшая сетевая утилита, предназначенная для создания прямого соединения между двумя компьютерами через интернет. <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/240551.php">µTorrent   3.1.3 Build 27498</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1413/"></a></div>
+	        <div class="news-preview">Компактный BitTorrent-клиент с поддержкой одновременной загрузки сразу нескольких файлов <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/271101.php">SUPERAntiSpyware  5.1.1006 </a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1277/"></a></div>
+	        <div class="news-preview">SUPERAntiSpyware - бесплатная для частного пользования программа, которая позволяет удалять с компьютера всевозможные виды вредоносного ПО  <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/410104.php">Rising PC Doctor 6.0.5.39</a>
+        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1531/"></a></div>
+	        <div class="news-preview">Rising PC Doctor - профессиональная утилита для обеспечения безопасности пользователей ПК. <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/426304.php">Disk Wipe 1.7</a>
+        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+	        <div class="category"><a href="/software/1295/"></a></div>
+	        <div class="news-preview">Disk Wipe - это бесплатная программа для безвозвратного удаления данных с жестких дисков и любых сменных носителей. <span class="news-info">/ 27 июня, 2012</span></div>
+        </div>
+	</div>
+ 
+<div class="block_soft_right">
+<h1>Популярные приложения</h1>
+		<div class="preview-news">
+        	<h2><a href="/software/294330.php">R-Studio 6.0.151275</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1253/"></a></div>
+	        <div class="news-preview"> &nbsp;&nbsp;&nbsp;&nbsp; R-Studio - программа для восстановления поврежденной или удаленной информации. <span class="news-info">/ 08 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/268093.php">Skype  5.10</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1503/"></a></div>
+	        <div class="news-preview">Skype - это простая бесплатная программа, с помощью которой вы можете бесплатно звонить во все уголки мира.  <span class="news-info">/ 15 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/358791.php">Google Chrome 20.0.1132.43</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1491/"></a></div>
+	        <div class="news-preview">Google Chrome &ndash; это web-обозреватель от корпорации Google. <span class="news-info">/ 27 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/240551.php">µTorrent   3.1.3 Build 27498</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1413/"></a></div>
+	        <div class="news-preview">Компактный BitTorrent-клиент с поддержкой одновременной загрузки сразу нескольких файлов <span class="news-info">/ 28 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/267491.php">Mozilla Firefox  13.0.1 </a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1491/"></a></div>
+	        <div class="news-preview"> Mozilla Firefox - удобный web-обозреватель с очень широким функционалом. <span class="news-info">/ 18 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/267398.php">Serv-U 12.0.0.2</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1495/"></a></div>
+	        <div class="news-preview">Программа представляет собой мощный, гибкий и легкий в установке FTP-сервер для всех платформ Windows. <span class="news-info">/ 12 мая, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/234101.php">VMware Workstation 8.0.3</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1292/"></a></div>
+	        <div class="news-preview">VMware позволяет эмулировать на одном компьютере работу сразу нескольких виртуальных машин. Каждая из таких машин может находиться под управлением своей собственной операционной системы.  <span class="news-info">/ 04 мая, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/267405.php">Cerberus FTP server  5.0.4 </a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1495/"></a></div>
+	        <div class="news-preview">Бесплатный FTP сервер, не требовательный к ресурсам системы <span class="news-info">/ 18 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/267023.php">Sandboxie  3.72 </a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1284/"></a></div>
+	        <div class="news-preview">Sandboxie позволяет запускать любые программы в безопасной виртуальной среде. <span class="news-info">/ 18 июня, 2012</span></div>
+        </div>
+			<div class="preview-news">
+        	<h2><a href="/software/268179.php">Recover My Files  4.9.6.1499</a>
+        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt+.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        		        			<img class="star" src="/images/rayt-.png" style="margin-left:0;margin-right:0;margin-bottom:5px;margin-top:0;padding:0;border:0;" width="5" height="5" />
+        		        	        	</h2>
+		<div class="category"><a href="/software/1253/"></a></div>
+	        <div class="news-preview">Утилита для восстановления удаленных файлов. <span class="news-info">/ 29 мая, 2012</span></div>
+        </div>
+	</div>
+ 
+
+
+<p style="color:#fff;"> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; </p>
+			</div>
+		</div>
+	</div>
+<!-- right column -->
+<div id="right">
+	<div id="column">
+	<div id="brright">
+		</div>
+
+<noindex>
+<div  class="news_block">
+	<div class="header">
+		<img border="0" alt="" align="left" src="/img2/col-left.png" width="24" height="24" />TOP Новости	</div>
+
+			<div class="ttl_tn"><a href="/news/426076.php">Microsoft пытается сделать разработку эксплойтов более дорогой </a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">18</span>
+	</div>
+	<div class="small">21 июня, 2012</div>
+	<div class="top">«Мы хотим, чтобы эксплойты были такими же дорогими и дефицитными, как и бреши в шифровании». </div>
+			<div class="ttl_tn"><a href="/news/426114.php">Закон о «черных списках» web-сайтов могут принять до середины июля </a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">14</span>
+	</div>
+	<div class="small">21 июня, 2012</div>
+	<div class="top">Законопроект был вынесен на рассмотрение Госдумы в начале текущего месяца представителями сразу всех...</div>
+			<div class="ttl_tn"><a href="/news/426176.php">Насильники должны сообщать о совершенном преступлении в Facebook</a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">12</span>
+	</div>
+	<div class="small">22 июня, 2012</div>
+	<div class="top">В Луизиане приняли закон, обязующий осужденных за совершение преступлений сексуального характера, сообщать...</div>
+			<div class="ttl_tn"><a href="/news/426205.php">В Голландии хотят легализовать DDoS-атаки</a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">9</span>
+	</div>
+	<div class="small">23 июня, 2012</div>
+	<div class="top">В партии настаивают на том, что это такая же правомерная форма протеста, как пикет, забастовка или демонстрация.</div>
+			<div class="ttl_tn"><a href="/news/426105.php">Microsoft: Мы в состоянии побороть детскую порнографию онлайн</a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">11</span>
+	</div>
+	<div class="small">21 июня, 2012</div>
+	<div class="top">Широкомасштабное использование технологии PhotoDNA от Microsoft позволит предотвратить распространение...</div>
+			<div class="ttl_tn"><a href="/news/426253.php">Взломана учетная запись Алексея Навального в Twitter</a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">16</span>
+	</div>
+	<div class="small">26 июня, 2012</div>
+	<div class="top">Политик обвиняет во взломе Следственный комитет, по мнению которого оппозиционер пытается дискредитировать...</div>
+			<div class="ttl_tn"><a href="/news/426297.php">RSA SecurID взломали за 13 минут </a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">9</span>
+	</div>
+	<div class="small">27 июня, 2012</div>
+	<div class="top">Обнаруженная исследователями уязвимость позволяет скомпрометировать криптографические устройства, работающие...</div>
+			<div class="ttl_tn"><a href="/news/426168.php">Управление «К» прекратило деятельность крупной ботсети</a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">5</span>
+	</div>
+	<div class="small">22 июня, 2012</div>
+	<div class="top">Сотрудники МВД РФ прекратили деятельность мошенника, принимавшего участие в хищении свыше 150 миллионов...</div>
+			<div class="ttl_tn"><a href="/news/426045.php">Sophos раскрыла новую мошенническую схему «Добрый самаритянин» </a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">9</span>
+	</div>
+	<div class="small">20 июня, 2012</div>
+	<div class="top">Мошенники действуют парами и предлагают хорошую прибыль в обмен на доброе дело. </div>
+			<div class="ttl_tn"><a href="/news/426212.php">Symantec проанализировала вирус для принтеров</a>
+		<img class="comment_icon" border="0" alt="" src="/img2/comments.png" width="13" height="13" />
+		<span style="font: 8pt/normal Verdana; color: rgb(128, 128, 128); font-size-adjust: none; font-stretch: normal;">9</span>
+	</div>
+	<div class="small">25 июня, 2012</div>
+	<div class="top">При компрометации системы вирусом Adware.Eorezo сетевые принтеры печатают невнятный текст до тех пор,...</div>
+			
+</div> 
+
+<div  class="news_block">
+	<div class="header">
+		<img border="0" alt="" align="left" src="/img2/col-left.png" width="24" height="24" />Уязвимости	</div>
+	<br />
+											
+		<span class="small">27 июня, 2012</span>
+								<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/426316.php">Множественные уязвимости в Google Chrome</a></h3>
+			<img alt="" src="/images/icon_patched.png" />
+			<img alt="" src="/images/icon_high.png" />
+		</div>
+	
+									<hr />		
+		<span class="small">25 июня, 2012</span>
+								<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/426243.php">Множественные уязвимости в Winamp</a></h3>
+			<img alt="" src="/images/icon_patched.png" />
+			<img alt="" src="/images/icon_high.png" />
+		</div>
+	
+									<hr />		
+		<span class="small">22 июня, 2012</span>
+								<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/425760.php">Множественные уязвимости в Oracle Java</a></h3>
+			<img alt="" src="/images/icon_patched.png" />
+			<img alt="" src="/images/icon_high.png" />
+		</div>
+	
+									<hr />		
+		<span class="small">21 июня, 2012</span>
+								<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/426118.php">Множественные уязвимости в ACDSee Pro</a></h3>
+			<img alt="" src="/images/icon_patched.png" />
+			<img alt="" src="/images/icon_high.png" />
+		</div>
+	
+										<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/426072.php">Целочисленное переполнение в LibTIFF</a></h3>
+			<img alt="" src="/images/icon_patched.png" />
+			<img alt="" src="/images/icon_medium.png" />
+		</div>
+	
+									<hr />		
+		<span class="small">20 июня, 2012</span>
+								<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/425642.php">Компрометация системы в Microsoft Internet Explorer</a></h3>
+			<img alt="" src="/images/icon_patched.png" />
+			<img alt="" src="/images/icon_high.png" />
+		</div>
+	
+									<hr />		
+		<span class="small">18 июня, 2012</span>
+								<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/425705.php">Уязвимость при обработке OpenType шрифтов в Microsoft Windows</a></h3>
+			<img alt="" src="/images/icon_unpatched.png" />
+			<img alt="" src="/images/icon_medium.png" />
+		</div>
+	
+										<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/425929.php">Компрометация системы в Apple iTunes</a></h3>
+			<img alt="" src="/images/icon_patched.png" />
+			<img alt="" src="/images/icon_high.png" />
+		</div>
+	
+										<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/425920.php">Множественные уязвимости в VMware</a></h3>
+			<img alt="" src="/images/icon_patched.png" />
+			<img alt="" src="/images/icon_low.png" />
+		</div>
+	
+									<hr />		
+		<span class="small">15 июня, 2012</span>
+								<div class="vir_ttl">
+			<h3 class="vuln"><a href="/vulnerability/425834.php">Множественные уязвимости в Opera</a></h3>
+			<img alt="" src="/images/icon_patched.png" />
+			<img alt="" src="/images/icon_low.png" />
+		</div>
+	
+			</div>
+	</div>
+ 
+</noindex>
+	</div>
+</div><!-- /right column -->
+
+
+<br class="clear" />
+<br class="clear" />
+<div id="footer">
+<!-- bottom -->
+<DIV style="width: 240px; margin-right: 20px; float: right;">
+<DIV style="background: rgb(152, 152, 152); font: 14pt/normal Georgia; height: 24px; color: rgb(255, 255, 255); font-size-adjust: none; font-stretch: normal;">
+<IMG border="0" alt="" align="left" src="/img2/bot-left-gray.png" width="24" height="24">Подписка</DIV>
+<form action="/subscribe/subscr_edit.php">
+<DIV style="background: rgb(244, 244, 244); padding: 20px;">
+	<div class="cb"><input type="checkbox" name="sf_RUB_ID[]" id="sf_RUB_ID_4" value="4" checked>&nbsp;Уведомления</div>
+	<div class="cb"><input type="checkbox" name="sf_RUB_ID[]" id="sf_RUB_ID_3" value="3" checked>&nbsp;Новости сайта</div>
+	<div class="cb"><input type="checkbox" name="sf_RUB_ID[]" id="sf_RUB_ID_2" value="2" checked>&nbsp;Утилиты</div>
+	<div class="cb"><input type="checkbox" name="sf_RUB_ID[]" id="sf_RUB_ID_1" value="1" checked>&nbsp;Top News</div>
+	<div class="cb"><input type="checkbox" name="sf_RUB_ID[]" id="sf_RUB_ID_12" value="12" checked>&nbsp;Вирусы</div>
+	<div class="cb"><input type="checkbox" name="sf_RUB_ID[]" id="sf_RUB_ID_14" value="14" checked>&nbsp;Сообщения блогов</div>
+	<table border="0" cellspacing="0" cellpadding="2" align="center">
+		<tr>
+			<td><input type="text" name="sf_EMAIL" size="20" value="" title="Введите ваш e-mail" /></td>
+		</tr>
+		<tr>
+			<td align="right"><input type="submit" name="OK" value="Подписаться" /></td>
+		</tr>
+	</table>
+</form>
+</div>
+</div>
+	<div style="margin-right: 280px; margin-left: 20px;">
+<div style="width: 31%; margin-right: 3%; float: left;">
+	<div style="background: rgb(251, 175, 93); font: 14pt/normal Georgia; height: 24px; color: rgb(255, 255, 255); font-size-adjust: none; font-stretch: normal;">
+		<img border="0" alt="" align="left" src="/img2/bot-left-yel.png" width="24" height="24" />Вирусы	</div>
+	<div style="background: rgb(244, 244, 244); padding: 20px;">
+			<div class="vir_ttl"><a href="/virus/423182.php">Trojan-Downloader.OSX.Flashfake</a></div>
+		<div class="vir_txt">Семейство вредоносных программ для Mac OSX. Первые варианты этих угроз были обнаружены в сентябре 2011 года.</div>
+			<div class="vir_ttl"><a href="/virus/423181.php">Trojan-Downloader.OSX.Flashfake.ab</a></div>
+		<div class="vir_txt">Семейство вредоносных программ для Mac OSX. Первые варианты этих угроз были обнаружены в сентябре 2011 года.</div>
+			<div class="vir_ttl"><a href="/virus/421969.php">Exploit.JS.CVE-2010-1885.k</a></div>
+		<div class="vir_txt">Программа-эксплоит, использующая уязвимости в продуктах Oracle Java и Adobe Reader/Acrobat, MS Internet Explorer, а также в центре справки и поддержки Microsoft Windows для выполнения загрузки и запуска вредоносного ПО.</div>
+		</div>
+</div>
+
+ 
+ 
+<div style="width: 31%; margin-right: 3%; float: left;">
+	<div style="background: rgb(251, 175, 93); font: 14pt/normal Georgia; height: 24px; color: rgb(255, 255, 255); font-size-adjust: none; font-stretch: normal;">
+		<img border="0" alt="" align="left" src="/img2/bot-left-yel.png" width="24" height="24" />Софт	</div>
+	<div style="background: rgb(244, 244, 244); padding: 20px;">
+			<div class="vir_ttl"><a href="/software/420984.php">Avira Antivir Rescue System</a></div>
+		<div class="vir_txt">Утилита для создания загрузочного диска в случае заражения системы.</div>
+			<div class="vir_ttl"><a href="/software/267148.php">PRTG - Free Network Monitor</a></div>
+		<div class="vir_txt">Пакет PRTG Traffic Grapher представляет собой удобное в использовании Windows-приложение для мониторинга пропускной способности сети.</div>
+			<div class="vir_ttl"><a href="/software/267647.php">Maxthon</a></div>
+		<div class="vir_txt">Maxthon - мощный веб-браузер с удобным настраиваем пользовательским интерфейсом. </div>
+			<div class="vir_ttl"><a href="/software/233576.php">WinHex </a></div>
+		<div class="vir_txt">Универсальный hex-редактор для файлов, дисков и RAM.</div>
+		</div>
+</div>
+
+ 
+
+<div style="width: 31%; float: left;">
+	<div style="background: rgb(251, 175, 93); font: 14pt/normal Georgia; height: 24px; color: rgb(255, 255, 255); font-size-adjust: none; font-stretch: normal;">
+		<img border="0" alt="" align="left" src="/img2/bot-left-yel.png" width="24" height="24" />Форум
+	</div>
+	<div style="background: rgb(244, 244, 244); padding: 20px;">
+					<div class="vir_ttl"><a href="/forum/forum19/topic52083/">Ищем специалистов по критографической защите информации</a></div>
+		<div class="vir_txt">29 июня, 2012 11:38<br />Автор: personal@cniieisu.ru</div>
+					<div class="vir_ttl"><a href="/forum/forum19/topic52082/">Ищем разработчика средств защиты информации под Linux</a></div>
+		<div class="vir_txt">29 июня, 2012 11:32<br />Автор: personal@cniieisu.ru</div>
+					<div class="vir_ttl"><a href="/forum/forum19/topic52081/">Ищем специалиста по SELinux</a></div>
+		<div class="vir_txt">29 июня, 2012 11:27<br />Автор: personal@cniieisu.ru</div>
+					<div class="vir_ttl"><a href="/forum/forum15/topic46929/">Сайт неправильно отображается в Firefox</a></div>
+		<div class="vir_txt">28 июня, 2012 22:26<br />Автор: revizor 83</div>
+		</div>
+</div>
+	</div>
+
+
+	<br clear="all" />
+	<div class="menu_bottom">
+		<a href="/advertiser.php">Реклама на сайте</a>
+		|	<a href="/about.php">О проекте</a>
+		|	<a href="/contacts.php">Контакты</a>
+		|	<a href="/copyright.php">Copyright</a>
+		|	<a href="/export/">Экспорт статей</a>
+		|	<a href="/rss.php">RSS</a>
+		|	<a href="/user.php">Мои параметры</a>
+		|	<a href="/map.php">Карта сайта</a>
+		|	<a href="/celebrating.php">Информер История</a>
+	</div>
+	<br clear="all" />
+	<div class="counters">
+<noindex>
+<!--LiveInternet counter-->
+<script type="text/javascript">
+<!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='http://counter.yadro.ru/hit?t52.2;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров и посетителей за 24 часа' "+
+"border=0 width=88 height=31><\/a>")
+//-->
+</script>
+<!--/LiveInternet-->
+
+
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+
+    (w[c] = w[c] || []).push(function() {
+
+        try {
+
+            w.yaCounter209738 = new Ya.Metrika({id:209738,
+
+                    clickmap:true,
+
+                    accurateTrackBounce:true});
+
+        }
+
+        catch(e) { }
+
+    });
+
+})(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/209738" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</noindex>
+</div>
+</div>
+</div>
+<div id="rightscript">
+<a href="/bitrix/rk.php?id=302&amp;event1=banner&amp;event2=click&amp;event3=1+%2F+%5B302%5D+%5BRIGHT%5D+webinar-pt&amp;goto=http%3A%2F%2Fwww.ptsecurity.ru%2Flab%2Fwebinars%2F"><img alt=""  title="" src="/upload/rk/5a5/5a57b5892231ae4f5d6d00ec6cb73afe.gif" width="240" height="400" border="0" /></a><br clear="all" />
+<br clear="all" />
+</div>
+<script type="text/javascript">
+	directscriptdiv=document.getElementById('rightscript');
+	directdiv=document.getElementById('brright');
+	directdiv.appendChild(directscriptdiv)
+</script>
+<script type="text/javascript" src="/js/authform.js"></script>
+
+</body>
+</html>

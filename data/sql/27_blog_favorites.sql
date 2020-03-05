@@ -1,0 +1,1 @@
+ALTER TABLE public.blogs_posts ADD COLUMN favorite boolean DEFAULT false NOT NULL

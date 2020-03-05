@@ -1,0 +1,1 @@
+alter table parties add column contacts text;

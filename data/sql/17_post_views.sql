@@ -1,0 +1,1 @@
+ALTER TABLE public.blogs_posts ADD COLUMN views integer NOT NULL DEFAULT 0;
