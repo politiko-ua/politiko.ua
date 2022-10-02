@@ -1,1 +1,0 @@
-# politiko-ua
